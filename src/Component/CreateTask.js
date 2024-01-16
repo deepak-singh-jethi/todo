@@ -1,18 +1,27 @@
 import React from "react";
 
-const CreateTask = function ({ taskInfo, uniqueKey }) {
+const CreateTask = function ({
+  taskInfo,
+  uniqueKey,
+  onChangeFun,
+  completeCheck,
+}) {
   const { task, deadline, priority } = taskInfo;
-  console.log(priority);
-
   return (
     <div
       id={uniqueKey}
       className={`taskContainer ${
-        priority === "High" ? "high" : priority === "Medium" ? "medium" : "low"
+        completeCheck
+          ? "complete"
+          : priority === "High"
+          ? "high"
+          : priority === "Medium"
+          ? "medium"
+          : "low"
       }`}>
       <div>
         <p>Complete :</p>
-        <input type="checkbox" id="completeCheck" />
+        <input type="checkbox" id="completeCheck" onChange={onChangeFun} />
       </div>
       <p>{task}</p>
       <p>{deadline}</p>

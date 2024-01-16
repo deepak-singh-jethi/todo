@@ -14,15 +14,13 @@ function App() {
   };
   const [inputs, setInputs] = useState(initialInputs);
   const [tasks, setTasks] = useState([]);
+  const [isComplete, setIsComplete] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
     const newTask = { ...inputs };
 
     setTasks([...tasks, newTask]);
-
-    console.log(inputs);
-    console.log(tasks);
     setInputs(initialInputs);
   }
 
@@ -32,8 +30,10 @@ function App() {
       ...prevInputs,
       [name]: value,
     }));
+  }
 
-    console.log(tasks);
+  function handleCheckbox() {
+    setIsComplete(!isComplete);
   }
 
   return (
@@ -43,7 +43,13 @@ function App() {
 
       <div className="todoContainer">
         {tasks.map((taskDeatil, index) => {
-          return <CreateTask taskInfo={taskDeatil} key={count++}></CreateTask>;
+          return (
+            <CreateTask
+              taskInfo={taskDeatil}
+              key={count++}
+              onChangeFun={handleCheckbox}
+              completeCheck={isComplete}></CreateTask>
+          );
         })}
       </div>
     </>
