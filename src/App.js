@@ -49,7 +49,8 @@ function App() {
       <h1>ToDo App</h1>
       {/* form */}
       <Form onSubmit={handleSubmit} input={inputs} onChangeFun={handleChange} />
-      \{/* task conatiner */}
+      {/* task conatiner */}
+      <br />
       <div className="todoContainer">
         <div className="taskContainer" id="taskHeading">
           <p>Complete</p>
