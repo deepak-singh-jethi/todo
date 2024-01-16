@@ -37,7 +37,7 @@ const Form = function ({ onSubmit, input, onChangeFun }) {
         </div>
       </div>
 
-      <button> SUBMIT</button>
+      <button> Add</button>
     </form>
   );
 };

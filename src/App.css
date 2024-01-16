@@ -83,6 +83,7 @@ form p{
   width: 900px;
   min-height: 500px;
   background-color: #79c2d0;
+  padding: 10px;
 }
 
 
@@ -91,18 +92,33 @@ form p{
   display: flex;
   width: 100%;
   justify-content: space-between;
-  background-color: #5585b5;
   padding: 20px;
   margin-bottom: 8px;
 }
 
-.taskContainer h3{
+.taskContainer>p{
   width: 200px;
   padding-left: 30px;
-  color: aliceblue;
+  font-weight: 400;
+  font-size: 20px;
+}
+.taskContainer>div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-
+.high{
+  background-color: #ff6961;
+}
+.medium{
+  background-color: #ffd700;
+  color: #333333;
+}
+.low{
+  background-color: #98fb98;
+  color: #006400;
+}
 /* 
 
 .first-color {

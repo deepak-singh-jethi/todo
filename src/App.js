@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { useState } from "react";
 import Form from "./Component/Form";
 import CreateTask from "./Component/CreateTask";
@@ -7,10 +6,11 @@ import CreateTask from "./Component/CreateTask";
 import "./App.css";
 
 function App() {
+  let count = 1;
   const initialInputs = {
     task: "",
     deadline: "",
-    priority: "low",
+    priority: "Low",
   };
   const [inputs, setInputs] = useState(initialInputs);
   const [tasks, setTasks] = useState([]);
@@ -43,7 +43,7 @@ function App() {
 
       <div className="todoContainer">
         {tasks.map((taskDeatil, index) => {
-          return <CreateTask taskInfo={taskDeatil} key={index}></CreateTask>;
+          return <CreateTask taskInfo={taskDeatil} key={count++}></CreateTask>;
         })}
       </div>
     </>
