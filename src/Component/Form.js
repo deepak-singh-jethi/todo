@@ -1,7 +1,7 @@
 import React from "react";
 
 const Form = function ({ onSubmit, input, onChangeFun }) {
-  const { task, deadline, priority, status } = input;
+  const { task, deadline, priority } = input;
 
   return (
     <form onSubmit={onSubmit}>
@@ -15,6 +15,7 @@ const Form = function ({ onSubmit, input, onChangeFun }) {
             name="task"
             value={task}
             onChange={onChangeFun}
+            required
           />
         </div>
         <div>
@@ -25,6 +26,7 @@ const Form = function ({ onSubmit, input, onChangeFun }) {
             name="deadline"
             value={deadline}
             onChange={onChangeFun}
+            required
           />
         </div>
         <div>

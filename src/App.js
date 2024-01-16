@@ -11,15 +11,14 @@ function App() {
     task: "",
     deadline: "",
     priority: "Low",
+    isComplete: false,
   };
   const [inputs, setInputs] = useState(initialInputs);
   const [tasks, setTasks] = useState([]);
-  const [isComplete, setIsComplete] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
     const newTask = { ...inputs };
-
     setTasks([...tasks, newTask]);
     setInputs(initialInputs);
   }
@@ -32,8 +31,13 @@ function App() {
     }));
   }
 
-  function handleCheckbox() {
-    setIsComplete(!isComplete);
+  function handleCheckbox(index) {
+    const updateTask = [...tasks];
+    updateTask[index] = {
+      ...updateTask[index],
+      isComplete: !updateTask[index].isComplete,
+    };
+    setTasks(updateTask);
   }
 
   return (
@@ -47,8 +51,10 @@ function App() {
             <CreateTask
               taskInfo={taskDeatil}
               key={count++}
-              onChangeFun={handleCheckbox}
-              completeCheck={isComplete}></CreateTask>
+              onChangeFun={() => {
+                handleCheckbox(index);
+              }}
+              completeCheck={taskDeatil.isComplete}></CreateTask>
           );
         })}
       </div>
