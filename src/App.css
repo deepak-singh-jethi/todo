@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+*{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+  
+}
+body{
+  background-color: #bbe4e9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+form{
+  width: 900px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  gap: 29px;
+  padding: 20px;
+  background-color: #53a8b6;
+}
+
+form>div{
+  display: flex;
+  gap: 40px;
+  padding-left: 20px;
+
+}
+form>div>div{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+}
+#task{
+  width: 300px;
+}
+input,select,label{
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+}
+
+input,select{
+  padding: 5px;
+}
+input:focus{
+  outline: none;
+}
+
+form button{
+  padding:  8px 15px;
+  border: none;
+  background-color: #5585b5;
   color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+form p{
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root>h1{
+  padding: 30px;
 }
+
+
+
+.todoContainer {
+  width: 900px;
+  min-height: 500px;
+  background-color: #79c2d0;
+}
+
+
+
+.taskContainer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #5585b5;
+  padding: 20px;
+  margin-bottom: 8px;
+}
+
+.taskContainer h3{
+  width: 200px;
+  padding-left: 30px;
+}
+
+
+/* 
+
+.first-color {
+  background: #5585b5;
+}
+
+.second-color {
+  background: #53a8b6;
+}
+
+.third-color {
+  background: #79c2d0;
+}
+
+.fourth-color {
+  background: #bbe4e9;
+}
+
+*/
