@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import Form from "./Component/Form";
 import CreateTask from "./Component/CreateTask";
-
 import "./App.css";
 
 function App() {
@@ -13,9 +12,12 @@ function App() {
     priority: "Low",
     isComplete: false,
   };
+
+  // hooks
   const [inputs, setInputs] = useState(initialInputs);
   const [tasks, setTasks] = useState([]);
 
+  // form submit handling
   function handleSubmit(event) {
     event.preventDefault();
     const newTask = { ...inputs };
@@ -23,6 +25,7 @@ function App() {
     setInputs(initialInputs);
   }
 
+  // input change handling
   function handleChange(event) {
     const { name, value } = event.target;
     setInputs((prevInputs) => ({
@@ -31,6 +34,7 @@ function App() {
     }));
   }
 
+  // checkBox handling
   function handleCheckbox(index) {
     const updateTask = [...tasks];
     updateTask[index] = {
@@ -43,8 +47,9 @@ function App() {
   return (
     <>
       <h1>ToDo App</h1>
+      {/* form */}
       <Form onSubmit={handleSubmit} input={inputs} onChangeFun={handleChange} />
-
+      \{/* task conatiner */}
       <div className="todoContainer">
         <div className="taskContainer" id="taskHeading">
           <p>Complete</p>
