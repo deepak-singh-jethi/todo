@@ -46,6 +46,12 @@ function App() {
       <Form onSubmit={handleSubmit} input={inputs} onChangeFun={handleChange} />
 
       <div className="todoContainer">
+        <div className="taskContainer" id="taskHeading">
+          <p>Complete</p>
+          <p>Task</p>
+          <p>Deadline</p>
+          <p>Priority</p>
+        </div>
         {tasks.map((taskDeatil, index) => {
           return (
             <CreateTask

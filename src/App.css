@@ -27,6 +27,7 @@ form{
   gap: 29px;
   padding: 20px;
   background-color: #53a8b6;
+  border-radius: 10px;
 }
 
 form>div{
@@ -83,30 +84,31 @@ form p{
   width: 900px;
   min-height: 500px;
   background-color: #79c2d0;
-  padding: 10px;
+  padding: 9px;
+  border-radius: 10px;
 }
+
 
 
 
 .taskContainer{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 20px;
-  margin-bottom: 8px;
-}
 
-.taskContainer>p{
-  width: 200px;
-  padding-left: 30px;
-  font-weight: 400;
-  font-size: 20px;
+  display: grid;
+  grid-template-columns: 100px 200px 200px 200px;
+  padding: 20px;
+  justify-content: space-around;
 }
 .taskContainer>div{
   display: flex;
-  align-items: center;
-  gap: 10px;
+ 
 }
+
+#taskHeading{
+    background-color: #5585b5;
+    padding: 15px;
+}
+
+
 
 .high{
   background-color: #ff5733;
@@ -120,25 +122,14 @@ form p{
   color: #006400;
 }
 .complete{
-  background-color: #609ba6;
+  background-color: #6cabb6;
   
 }
-/* 
 
-.first-color {
-  background: #5585b5;
+#completeCheck{
+  font-size: 50px;
+  padding-right: 10px !important;
 }
 
-.second-color {
-  background: #53a8b6;
-}
 
-.third-color {
-  background: #79c2d0;
-}
 
-.fourth-color {
-  background: #bbe4e9;
-}
-
-*/

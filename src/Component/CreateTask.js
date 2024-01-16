@@ -20,9 +20,9 @@ const CreateTask = function ({
           : "low"
       }`}>
       <div>
-        <p>Complete :</p>
         <input type="checkbox" id="completeCheck" onChange={onChangeFun} />
       </div>
+
       <p>{task}</p>
       <p>{deadline}</p>
       <p>{priority}</p>
